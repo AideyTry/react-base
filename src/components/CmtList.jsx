@@ -2,8 +2,7 @@ import React from 'react'
 
 //导入评论项子组件
 import CmtItem from '@/components/CmtItem'
-
-const titleStyle = { color: 'red', fontSize: '35px', zIndex: 3, fontWeight: 200, textAlign: 'center'}
+import '@/assets/css/common.css'
 //使用class关键字，定义父组件
 export default class CmtList extends React.Component{
   constructor() {
@@ -19,7 +18,7 @@ export default class CmtList extends React.Component{
   }
   render() {
     return <div>
-      <h1 style={titleStyle}>这是评论列表组件</h1>
+      <h1 className="title">这是评论列表组件</h1>
       {this.state.CommentList.map((item) => <CmtItem {...item} key={item.id}></CmtItem>)}
     </div>
   }

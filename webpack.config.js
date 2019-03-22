@@ -20,6 +20,10 @@ module.exports = {
         test: /\.js|jsx$/,
         use: 'babel-loader', // 一个loader的时候可以写字符串，如果是多个需要写数组。
         exclude: /node_modules/ // 排除项，一定要加。
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader?modules'] // 打包处理css样式表的第三方loader。可以在css-loader之后，通过?追加参数，其中有个固定的参数，叫做modules,表示为普通的css样式表启用模块化。
       }
     ]
   },
