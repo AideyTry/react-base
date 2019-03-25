@@ -23,7 +23,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules'] // 打包处理css样式表的第三方loader。可以在css-loader之后，通过?追加参数，其中有个固定的参数，叫做modules,表示为普通的css样式表启用模块化。
+        use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:6]'] // 打包处理css样式表的第三方loader。可以在css-loader之后，通过?追加参数，其中有个固定的参数，叫做modules,表示为普通的css样式表启用模块化。
+        /* 
+        使用localIdentName 自定义生成的类名格式。
+        [path] 表示样式表，相对于项目根目录所在路径
+        [name] 表示样式表文件名称
+        [local] 表示样式的类名定义名称
+        [hash:length] 表示32位的hash值，可自己设置长度，一般5、6位即可满足了。
+        */
       }
     ]
   },

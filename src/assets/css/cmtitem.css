@@ -1,0 +1,12 @@
+.title {
+  font-size: 14px;
+}
+.content-text {
+  font-size: 12px;
+}
+.cmtbox {
+  border: 1px deshed #ccc;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
