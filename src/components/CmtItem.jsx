@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/components/styles'
-import cssObj from '@/assets/css/cmtitem.css'
+import cssObj from '@/assets/css/cmtitem.scss'
 console.log(cssObj)
 // 使用function构造函数，定义普通的无状态组件
 export default function CmtItem(props) {

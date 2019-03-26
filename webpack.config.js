@@ -23,7 +23,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:6]'] // 打包处理css样式表的第三方loader。可以在css-loader之后，通过?追加参数，其中有个固定的参数，叫做modules,表示为普通的css样式表启用模块化。
+        use: ['style-loader', 'css-loader'] 
+      },
+      // 注意： 处理的.css文件样式表默认是三方的，不会模块化。.scss是自定义的样式表，模块化。
+      // 打包处理css样式表的第三方loader。可以在css-loader之后，通过?追加参数，其中有个固定的参数，叫做modules,表示为普通的css样式表启用模块化。
         /* 
         使用localIdentName 自定义生成的类名格式。
         [path] 表示样式表，相对于项目根目录所在路径
@@ -31,6 +34,13 @@ module.exports = {
         [local] 表示样式的类名定义名称
         [hash:length] 表示32位的hash值，可自己设置长度，一般5、6位即可满足了。
         */
+      {
+        test: /\.scss$/,
+        use: ['style-loader','css-loader?modules&localIdentName=[path][name]-[local]-[hash:6]','sass-loader']
+      },
+      {
+        test: /\.ttf|woff|woff2|eot|svg$/, // 打包处理字体文件和图片的loader
+        use: 'url-loader' // url-loader内部依赖file-loader,所有最好按照以下file-loader
       }
     ]
   },
