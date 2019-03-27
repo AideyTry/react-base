@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Hello from '@/components/Hello'
 import CmtList from '@/components/CmtList'
-import BindEvent from '@/components/BindEvent'
+import BindInputValue from '@/components/BindInputValue'
 const dog = {
   name: '小黄',
   age: 3,
@@ -12,5 +12,5 @@ ReactDOM.render(<div>
   <Hello {...dog}></Hello>
   <CmtList></CmtList>
   <hr />
-  <BindEvent></BindEvent>
+  <BindInputValue></BindInputValue>
 </div>, document.getElementById('app'))
